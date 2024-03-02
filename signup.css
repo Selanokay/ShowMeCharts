@@ -1,0 +1,20 @@
+body {
+    background-color: powderblue;
+}
+h1 {
+    color: blue;
+}
+p1 {
+    font-size: 14px;
+}
+p2 {
+    font-size: 12px;
+}
+div {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
