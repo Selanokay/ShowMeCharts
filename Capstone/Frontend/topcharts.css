@@ -1,8 +1,13 @@
+html {
+    height: 100%;
+}
 body {
-    background-color: powderblue;
+    height: 100%;
+    background-color: rgb(200, 200, 200);
+    font-family: Arial, sans-serif;
 }
 h1 {
-    color: blue;
+    color: #e0ad12;
 }
 p1 {
     font-size: 14px;
@@ -12,9 +17,44 @@ p2 {
 }
 div {
     width: 300px;
-    border: 15px solid green;
+    border: 15px solid black;
     padding: 50px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;
+    border-radius: 8px;
+}
+.button {
+    background: black;
+    color: #e0ad12;
+    transition-duration: 0.5s;
+    padding: 15px 32px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+.button:hover {
+    background-color: #e0ad12;
+    color: black;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #e0ad12;
+    border-radius: 8px;
+}
+input[type=text]:focus {
+    background-color: #e0ad12;
+}
+.link {
+    color: black;
+    transition-duration: 0.5s;
+}
+.link:hover {
+    background-color: #e0ad12;
+    color: black;
 }
