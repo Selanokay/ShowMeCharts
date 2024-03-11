@@ -1,0 +1,40 @@
+header {
+    color: yellow;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+}
+
+/* Style for vertical menu */
+.vertical-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 150px; /* Set a fixed width for the menu */
+}
+
+
+/* Style for top right buttons */
+.top-right-buttons {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.top-right-buttons a {
+    margin-left: 10px;
+}
+
+section {
+    padding: 20px;
+}
+
