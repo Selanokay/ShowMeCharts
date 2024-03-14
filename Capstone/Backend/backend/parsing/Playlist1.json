@@ -1,0 +1,784 @@
+{
+  "playlists": [
+    {
+      "name": "J2C",
+      "lastModifiedDate": "2024-01-19",
+      "items": [
+        {
+          "track": {
+            "trackName": "Midnight City",
+            "artistName": "M83",
+            "albumName": "Hurry Up, We're Dreaming",
+            "trackUri": "spotify:track:1eyzqe2QqGZUmfcPZtrIyt"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Zone",
+            "artistName": "Venjent",
+            "albumName": "Zone",
+            "trackUri": "spotify:track:27cIXDbuwLxuvHTdoS6KDl"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Heads Will Roll - A-Trak Remix Radio Edit",
+            "artistName": "Yeah Yeah Yeahs",
+            "albumName": "Heads Will Roll",
+            "trackUri": "spotify:track:0vBpyfpW2lARGh3AZFtWRi"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Special K",
+            "artistName": "BLP KOSHER",
+            "albumName": "Bars Mitzvah",
+            "trackUri": "spotify:track:2GeCqcr5X9P055lHR9foYn"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Menage A Trois",
+            "artistName": "LIZOT",
+            "albumName": "Menage A Trois",
+            "trackUri": "spotify:track:40vCMTDaDwwpf7DyBlmgEj"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Ambitionz Az A Ridah",
+            "artistName": "2Pac",
+            "albumName": "All Eyez On Me",
+            "trackUri": "spotify:track:5g9lS8deSIxItFBmZRC4vN"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Ten Tonne Skeleton",
+            "artistName": "Royal Blood",
+            "albumName": "Royal Blood",
+            "trackUri": "spotify:track:3doAFpfHhPfQ4dUsYVHSHT"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Mr. Brightside",
+            "artistName": "The Killers",
+            "albumName": "Hot Fuss",
+            "trackUri": "spotify:track:7oK9VyNzrYvRFo7nQEYkWN"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "X Gon' Give It To Ya",
+            "artistName": "DMX",
+            "albumName": "The Definition Of X: Pick Of The Litter",
+            "trackUri": "spotify:track:1zzxoZVylsna2BQB65Ppcb"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Ballin",
+            "artistName": "Logic",
+            "albumName": "Uncle Drew (Original Motion Picture Soundtrack)",
+            "trackUri": "spotify:track:17N5FdRwJuv3UXQ7MHnbhF"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "POWER",
+            "artistName": "Kanye West",
+            "albumName": "My Beautiful Dark Twisted Fantasy",
+            "trackUri": "spotify:track:2gZUPNdnz5Y45eiGxpHGSc"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "my sword",
+            "artistName": "Jeris Johnson",
+            "albumName": "my sword",
+            "trackUri": "spotify:track:1cL1agknM3tbANL8LNLnr7"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Wants and Needs (feat. Lil Baby)",
+            "artistName": "Drake",
+            "albumName": "Scary Hours 2",
+            "trackUri": "spotify:track:65OVbaJR5O1RmwOQx0875b"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Psychosocial",
+            "artistName": "Slipknot",
+            "albumName": "All Hope Is Gone",
+            "trackUri": "spotify:track:2MvIMgtWyK88OiPi0J8Dg3"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Gorgeous",
+            "artistName": "Kanye West",
+            "albumName": "My Beautiful Dark Twisted Fantasy",
+            "trackUri": "spotify:track:23SZWX2IaDnxmhFsSLvkG2"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Snuff",
+            "artistName": "Slipknot",
+            "albumName": "All Hope Is Gone",
+            "trackUri": "spotify:track:2vPZ4Lklyu75zBR3SgbFNI"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Du hast",
+            "artistName": "Rammstein",
+            "albumName": "Sehnsucht",
+            "trackUri": "spotify:track:6uEvFCaOqXyEidoO8BZbyh"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Said Sum",
+            "artistName": "Moneybagg Yo",
+            "albumName": "Code Red",
+            "trackUri": "spotify:track:3sKz6Sd72K0ofPWcJPPk6H"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Somebody Told Me",
+            "artistName": "The Killers",
+            "albumName": "Hot Fuss",
+            "trackUri": "spotify:track:6PwjJ58I4t7Mae9xfZ9l9v"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "When You Were Young",
+            "artistName": "The Killers",
+            "albumName": "Sam's Town",
+            "trackUri": "spotify:track:70wYA8oYHoMzhRRkARoMhU"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Murder In My Mind",
+            "artistName": "Kordhell",
+            "albumName": "Murder In My Mind",
+            "trackUri": "spotify:track:6qyS9qBy0mEk3qYaH8mPss"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "One More Rep",
+            "artistName": "Austrian Death Machine",
+            "albumName": "Triple Brutal",
+            "trackUri": "spotify:track:5Qj56RpF3aiNwXJNWd4LbK"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-16"
+        },
+        {
+          "track": {
+            "trackName": "Square Hammer",
+            "artistName": "Ghost",
+            "albumName": "Meliora",
+            "trackUri": "spotify:track:2XgTw2co6xv95TmKpMcL70"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-09-26"
+        },
+        {
+          "track": {
+            "trackName": "Swaggin' at the Partment",
+            "artistName": "Ghostface Playa",
+            "albumName": "High as Fuck",
+            "trackUri": "spotify:track:42Fs484UmP8l8vR9O4UyIo"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-10-09"
+        },
+        {
+          "track": {
+            "trackName": "TERMINATOR",
+            "artistName": "Tommy Soprano",
+            "albumName": "TERMINATOR",
+            "trackUri": "spotify:track:4REoHTqYi6BUdDjmO6kvuF"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2024-01-19"
+        }
+      ],
+      "description": null,
+      "numberOfFollowers": 3
+    },
+    {
+      "name": "I am probably tilted :)",
+      "lastModifiedDate": "2023-10-06",
+      "items": [
+        {
+          "track": {
+            "trackName": "Mvrder Xn My Mindx",
+            "artistName": "Scarlxvee",
+            "albumName": "Mvrder Xn My Mindx",
+            "trackUri": "spotify:track:2ylYDXEtohH1U3XESTfyoM"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "Murder In My Mind",
+            "artistName": "Kordhell",
+            "albumName": "Murder In My Mind",
+            "trackUri": "spotify:track:6qyS9qBy0mEk3qYaH8mPss"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "RAVE",
+            "artistName": "Dxrk ダーク",
+            "albumName": "RAVE",
+            "trackUri": "spotify:track:01kfSdF9zfcDLri5sSWEoL"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "Sovereign - Extended",
+            "artistName": "ruinedbymateo",
+            "albumName": "Sovereign",
+            "trackUri": "spotify:track:4BUZRK36HQEmD9irBiwdlq"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "vendetta!",
+            "artistName": "MUPP",
+            "albumName": "vendetta!",
+            "trackUri": "spotify:track:5Sk39LuvdwuvL84jD01Dum"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "Why Not",
+            "artistName": "Ghostface Playa",
+            "albumName": "Why Not",
+            "trackUri": "spotify:track:4oMyggIzClkOcCTvotFLkP"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "Legend",
+            "artistName": "Tevvez",
+            "albumName": "Phantom",
+            "trackUri": "spotify:track:05EG9LwFCVjkoYEWzsrHHO"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-08-21"
+        },
+        {
+          "track": {
+            "trackName": "GUTS",
+            "artistName": "ashka",
+            "albumName": "GUTS",
+            "trackUri": "spotify:track:5DsYIn5fUcJMY7etL3hJVG"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2023-10-06"
+        }
+      ],
+      "description": null,
+      "numberOfFollowers": 0
+    },
+    {
+      "name": "None DMCA Starting or Ending Stream",
+      "lastModifiedDate": "2021-09-12",
+      "items": [
+        {
+          "track": {
+            "trackName": "Lightbringer - Acoustic",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:2c3RC6Q1srMggPeBitBBvO"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-12"
+        },
+        {
+          "track": {
+            "trackName": "dreamy night",
+            "artistName": "LilyPichu",
+            "albumName": "dreamy night",
+            "trackUri": "spotify:track:3NyxWuYU0s2GA6oZgDRQep"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-12"
+        },
+        {
+          "track": {
+            "trackName": "last cup of coffee",
+            "artistName": "LilyPichu",
+            "albumName": "last cup of coffee",
+            "trackUri": "spotify:track:7iJAWmsQFzFv9ON8hqLk6h"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-12"
+        }
+      ],
+      "description": null,
+      "numberOfFollowers": 0
+    },
+    {
+      "name": "None DMCA",
+      "lastModifiedDate": "2021-09-11",
+      "items": [
+        {
+          "track": {
+            "trackName": "Lost Chapter",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:207K1MXwebxpXDS43OazOU"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Predator",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:5yGvW9W8yte5ChMcIAwb0m"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Edge of Night",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:3Ro1AMjH9qdY3ZTWfxIFpN"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Gathering Storm",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:2eKab7Fw5lCVnVM4G16N6B"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Conqueror",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:4EUVF9U6yBUOz97cIyFhar"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Executioner's Calling",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:5hdHRPKv5pwB93nBq19reU"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Stormrazor",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:1gZ1mDu4N5yxt0Da0zZ5RI"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Aftershock",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:6BPJCWBiFHF7ItUQlyyP6x"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Last Stand",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:5V1wcYlThHF52vNxvHVSiu"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Redemption",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:3voBp3LlT8uHeQJ1QNWr8K"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Lightbringer - Acoustic",
+            "artistName": "Pentakill",
+            "albumName": "III: Lost Chapter",
+            "trackUri": "spotify:track:2c3RC6Q1srMggPeBitBBvO"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Lightbringer",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:7ixYgkcd8aptv5bBAmQXYF"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Deathfire Grasp",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:2TpIrrYN70VjU651xOsJzJ"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Ohmwrecker",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:3y5bwXEnArAVuFuE9wjmp6"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Last Whisper",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:5CqRnqaQI4cg4KStMa7XQO"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "The Hex Core",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:4HbQ2dNDJRcqkhiq6ZBMQ0"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "The Prophecy",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:4glz9iy7CSggrobpJkFk2S"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Thornmail",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:0uRmp590KzGFdXI4shDV3x"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Orb of Winter",
+            "artistName": "Pentakill",
+            "albumName": "Smite and Ignite",
+            "trackUri": "spotify:track:5Rv6N0h3s29CoZXZ55eL5Q"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Cull",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:60MENAaLuthH95BFH7uF8l"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Mortal Reminder",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:2hMng3Va9y65zNzKefarHh"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Tear of the Goddess",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:2fKdOno4uuTRrTXdikpdfm"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Infinity Edge",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:43D7G1IUQdqmnrQ0miHjVV"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Dead Man's Plate",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:03KlsSYkdshISL4kg3uqqO"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "The Hex Core mk-2",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:1PNCaYGRZ70863TyvsA3q0"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "The Bloodthirster",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:0WUgPVIouwbNaAGsLHRc3Y"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Frozen Heart",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:6SmqolecN0Sa5Ul3ekrN26"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Rapid Firecannon",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:5hTFEOZrnKjDQJUBeJ19Mp"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "Blade of the Ruined King",
+            "artistName": "Pentakill",
+            "albumName": "II: Grasp of the Undying",
+            "trackUri": "spotify:track:2dtEUjoZTHwYtghVKt4Ewl"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "GIANTS",
+            "artistName": "True Damage",
+            "albumName": "GIANTS",
+            "trackUri": "spotify:track:5C0ivQMxes2lWuOANhvVAm"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "THE BADDEST",
+            "artistName": "K/DA",
+            "albumName": "THE BADDEST",
+            "trackUri": "spotify:track:2V4Fx72svQRxrFvNT1eq5f"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        },
+        {
+          "track": {
+            "trackName": "VILLAIN",
+            "artistName": "K/DA",
+            "albumName": "ALL OUT",
+            "trackUri": "spotify:track:3QSjVPObHxuAJc3E5nrjRn"
+          },
+          "episode": null,
+          "localTrack": null,
+          "addedDate": "2021-09-11"
+        }
+      ],
+      "description": null,
+      "numberOfFollowers": 1
+    }
+  ]
+}
