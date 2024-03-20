@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Sign Up Page</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"  href="signup.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intital-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign Up</title>
 </head>
+
 <body>
-<a href="testing_page.html">
-    <img src="Placeholder.jpg" alt="Logo Placeholder" style="width:75px;height:75px">
-</a>
-<br>
 
-<div>
-    <h3>Sign Up</h3>
-    <form id="signup1" action="">
-        <label for="uemail">Email &emsp;&emsp;&emsp;&emsp;<p2>Already have an account? &nbsp; <a href= /testing_page.html style="background:black; color:#e0ad12; border-radius: 4px; padding: 2px;">Log In</a></p2></label><br>
-        <input type="text" style="width: 280px;" id="uemail" name="uemail"><br>
-        <label for="upassword">Password </label><br>
-        <input type="text" style="width: 280px;" id="upassword" name="upassword"><br>
-        <br>
-        <input type="submit" value="Sign up for free" class="button">
-    </form>
-    <br>
-    <br>
-    <p2>By clicking the "Sign up for free" button, you are creating an account, and agree to <a href= /testing_page.html class="link"><b>ProJect GraPhiNg's Terms of Service</b></a> and <a href= /testing_page.html class="link"><b>Privacy Policy.</b></p>
-</div>
+    <!-- Home Logo -->
+    <div class="logo-container">
+        <a href="home.html" class="logo-link"> 
+            <img src="images/logo.png" alt="Logo" class="logo-img">
+        </a>
+        <p class="logo-text">ProJect GraPhiNg</p>
+    </div>
 
+    <!-- Sign Up Form -->
+    <div class="container">
+        <div class="form-container">
+        <form id="signup" action="">
+            <fieldset>
+                <legend>Sign Up</legend>
+
+                <br></br>
+                <p>Have an account? <a href= login.html class="button">Log In</a></p>
+                <br></br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br>
+    
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+            </fieldset>
+            
+            <br></br>
+            <input type="submit" value="Sign Up" class="button">
+        </form>    
+        <br></br>
+        <p2>By creating an account, you are agreeing to ProJect GraPhiNg's <a href= tos.html class="link"><b>Terms of Service</b></a> and <a href= priv.html class="link"><b>Privacy Policy.</b></p>
+        </div>
+    </div>
 </body>
-<script src="signup.js"></script>
 </html>
