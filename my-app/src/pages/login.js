@@ -11,7 +11,6 @@ export default function MainPage() {
         <Link to="/" className="logo-link"> 
           <img src={logoImage} alt="Logo" className="logo-img" />
         </Link>
-        <p className="logo-text">ProJect GraPhiNg</p>
       </div>
 
       {/* Log In Up Form */}
