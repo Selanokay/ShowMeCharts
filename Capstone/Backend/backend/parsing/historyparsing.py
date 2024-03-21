@@ -12,7 +12,7 @@ def get_listening_history(data):
     return track_info
 
 def main():
-    with open("StreamingHistory_music_0.json", "r", encoding="utf-8") as file:#sample file used is from Garret's spotify data
+    with open("StreamingHistory_music_0.json", "r", encoding="utf-8") as file:#sample file used is from Garrett's spotify data
         listen_data = json.load(file)
     
     history = get_listening_history(listen_data)

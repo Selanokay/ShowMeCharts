@@ -35,7 +35,7 @@ def get_playlist(data):
         return playlists_array
 
 def main():
-    with open("Playlist1.json", "r", encoding="utf-8") as file:#sample file used is from Garret's spotify data
+    with open("Playlist1.json", "r", encoding="utf-8") as file:#sample file used is from Garrett's spotify data
         playlist_data = json.load(file)
     
     playlists = get_playlist(playlist_data)

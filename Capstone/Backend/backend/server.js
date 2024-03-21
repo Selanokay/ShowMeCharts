@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+const mongoose = require('mongoose')
+const musicinfo = require('./musicinfo')
 const express = require('express')
 const songRoutes = require('./routes/songs')
 
@@ -28,3 +30,5 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
+new musicinfo({ endTime: "test", artistName: "test", trackName: "test", msPlayed: "test"})
+//musicinfo.save().then(() => console.log("Music Info Saved"))
