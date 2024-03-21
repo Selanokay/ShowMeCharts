@@ -15,7 +15,10 @@ def main():
     with open("StreamingHistory_music_0.json", "r", encoding="utf-8") as file:#sample file used is from Garret's spotify data
         listen_data = json.load(file)
     
+
     history = get_listening_history(listen_data)
+
+    #temp output to show that function works
     print("Track Name\tArtist\tDate\tPlaytime")
     print("-----------------------------------")#printing for now but will need connection to database
     for song, artist, time, playtime in history:

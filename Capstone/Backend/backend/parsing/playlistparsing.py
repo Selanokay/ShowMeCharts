@@ -40,6 +40,7 @@ def main():
     
     playlists = get_playlist(playlist_data)
 
+    #temporary display loops to show that above function is working
     for playlist in playlists:#display loop to show its in array
         print(f"Playlist Name: {playlist['name']}")
         print(f"Last Modified Date: {playlist['last_modified_date']}")
