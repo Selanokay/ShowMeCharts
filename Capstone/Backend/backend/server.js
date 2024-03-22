@@ -8,7 +8,7 @@ const songRoutes = require('./routes/songs')
 //express app
 const app = express()
 
-//middleware
+//middleware (Use request.render to render pages, if you dont )
 app.use(express.json())
 
 app.use((req, res, next) => {
@@ -30,5 +30,5 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
-new musicinfo({ endTime: "test", artistName: "test", trackName: "test", msPlayed: "test"})
-//musicinfo.save().then(() => console.log("Music Info Saved"))
+new musicinfo({ endTime: "Egg", artistName: "Egg", trackName: "Egg", msPlayed: "Egg"})
+musicinfo.save().then(() => console.log("Music Info Saved"))
