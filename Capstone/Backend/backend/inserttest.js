@@ -19,7 +19,7 @@ function readJSONFile(filename, callback) {
 
 async function main() {
     // Connect to MongoDB
-    await mongoose.connect('mongodb://localhost:4000/your_database', {
+    await mongoose.connect('mongodb://localhost:4000/', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });

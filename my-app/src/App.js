@@ -5,6 +5,8 @@ import LoginPage from "./pages/login.js";
 import Header from "./pages/header.js";
 import signuplogin from "./pages/signuplogin.js";
 import Navigation from "./pages/navigation.js";
+import Profile from "./pages/profile.js";
+import Charts from "./pages/charts.js";
 import './App.css'
 
 const App = () => {
