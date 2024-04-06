@@ -11,7 +11,7 @@ ARG NODE_VERSION=16.14.2
 FROM node:${NODE_VERSION}-alpine as base
 
 # Set working directory for all build stages.
-WORKDIR /Users/cniel/OneDrive/Desktop/CapstoneProject/GitHub/Capstone/my-app
+WORKDIR /Users/grr16/Pictures/Capstone-Folder/Capstone-3.0/Capstone/my-app
 
 ################################################################################
 # Create a stage for installing production dependencies.
@@ -59,8 +59,8 @@ COPY package.json .
 # Copy the production dependencies from the deps stage and also
 # the built application from the build stage into the image.
 
-COPY --from=deps /Users/cniel/OneDrive/Desktop/CapstoneProject/GitHub/Capstone/my-app/node_modules ./node_modules
-COPY --from=build /Users/cniel/OneDrive/Desktop/CapstoneProject/GitHub/Capstone/my-app ./my-app
+COPY --from=deps /Users/grr16/Pictures/Capstone-Folder/Capstone-3.0/Capstone/my-app/node_modules ./node_modules
+COPY --from=build /Users/grr16/Pictures/Capstone-Folder/Capstone-3.0/Capstone/my-app ./my-app 
 
 # Expose the port that the application listens on.
 EXPOSE 3000

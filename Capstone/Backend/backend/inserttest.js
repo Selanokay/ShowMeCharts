@@ -1,6 +1,13 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 
+const track = mongoose.model('Track', new mongoose.Schema({
+    songName: String,
+    artistName: String,
+    endTime: Date,
+    msPlayed: Number
+}));
+
 // Function to read and parse JSON file
 function readJSONFile(filename, callback) {
     fs.readFile(filename, 'utf8', (err, data) => {
@@ -19,7 +26,7 @@ function readJSONFile(filename, callback) {
 
 async function main() {
     // Connect to MongoDB
-    await mongoose.connect('mongodb://localhost:4000/', {
+    await mongoose.connect('mongodb://localhost:4000/Capstoneapp', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
