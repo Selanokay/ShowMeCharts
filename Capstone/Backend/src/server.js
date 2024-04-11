@@ -20,6 +20,17 @@ app.use((req, res, next) => {
     next()
 })
 
+// fetch all music info from MongoDB listed by Most minutes playes
+app.get('/api/allsongs', async (req, res) => {
+    try {
+        const allMusicInfo = await musicinfo.find().sort({ msPlayed: -1 });
+        res.status(200).json(allMusicInfo);
+    } catch (error) {
+        console.error('Error fetching all music info:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 app.get('/api/parse-json', async (req, res) => {
     try {
