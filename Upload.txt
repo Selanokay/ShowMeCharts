@@ -1,0 +1,31 @@
+//Potential code to use for uploading json files to our database
+
+const multer = require('multer');
+
+// Multer configuration for file upload
+const upload = multer({ dest: 'uploads/' });
+
+// Route to handle file upload
+app.post('/api/upload-json', upload.single('jsonFile'), async (req, res) => {
+    try {
+        // Check if file was uploaded
+        if (!req.file) {
+            return res.status(400).send('No file uploaded.');
+        }
+
+        // Read uploaded JSON file
+        const jsonData = fs.readFileSync(req.file.path, 'utf8');
+        
+        // Parse JSON data
+        const parsedData = JSON.parse(jsonData);
+
+        // Save parsed data into MongoDB
+        await musicinfo.insertMany(parsedData);
+
+        // Respond with success message
+        res.status(201).send('JSON file uploaded and data saved to MongoDB.');
+    } catch (error) {
+        console.error('Error uploading JSON file and saving data to MongoDB:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
