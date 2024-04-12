@@ -35,7 +35,7 @@ app.get('/api/allsongs', async (req, res) => {
 app.get('/api/parse-json', async (req, res) => {
     try {
         // Read JSON file
-        const jsonData = fs.readFileSync('/Users/grr16/Pictures/Capstone-Folder/Capstone-4.0/Capstone/Backend/src/parsing/StreamingHistory_music_0.json', 'utf8') 
+        const jsonData = fs.readFileSync('/Users/grr16/Pictures/Capstone-Folder/Capstone-5.0/Capstone/Capstone/Backend/src/parsing/StreamingHistory_music_0.json', 'utf8') 
 
         // Parse JSON data
         const parsedData = JSON.parse(jsonData)
