@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chart.js": "^3.9.1",
+    "chartjs-node-canvas": "^4.1.6",
+    "collections": "^5.1.13"
+  }
+}
