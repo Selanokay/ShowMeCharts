@@ -10,6 +10,7 @@ import Profile from "./pages/profile.js";
 import Charts from "./pages/charts.js";
 import './App.css'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

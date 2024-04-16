@@ -1,39 +1,51 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import profileImage from '../images/profile.png';
 import chartsImage from '../images/charts.png';
 import clubsImage from '../images/clubs.png';
 import logoImage from '../images/logo.png';
 import logoutImage from '../images/logout.png';
 import schoolsImage from '../images/schools.png';
-import { Link } from 'react-router-dom';
 
 export default function Navigation() {
     return (
-        //<> and </> is used to call multiple functions in JS HTML
-        <div className="side-nav">
-          <div className="logo-container">
-            <Link to="/" className="logo-link"> 
-              <img src={logoImage} alt="Logo" className="logo-img" />
-            </Link>
-            <p className="logo-text">ShowMeCharts</p>
-          </div>
-          <ul>
-              <Link to="/" className="profile-link">
-                <li><img src={profileImage} alt="Profile"/><p>Profile</p></li>
-              </Link>
-              <Link to="/" className="profile-link">
-                <li><img src={chartsImage} alt="Charts"/><p>Charts</p></li>
-              </Link>
-              <Link to="/" className="profile-link">
-                <li><img src={schoolsImage} alt="Schools"/><p>Schools</p></li>
-              </Link>
-              <Link to="/" className="profile-link">
-                <li><img src={clubsImage} alt="Clubs"/><p>Clubs</p></li>
-              </Link>
-          </ul>
-          <ul>
-            <li><img src={logoutImage} alt="Logout"/><p>Logout</p></li>
-          </ul>
+        <div className="side-nav d-flex flex-column justify-content-between bg-light">
+            <div className="logo-container mb-3">
+                <Link to="/" className="d-flex align-items-center logo-link text-decoration-none">
+                    <img src={logoImage} alt="Logo" className="logo-img img-fluid" />
+                    <p className="logo-text ms-2 h5 mb-0">ShowMeCharts</p>
+                </Link>
+            </div>
+            <ul className="nav flex-column p-0">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link active">
+                        <img src={profileImage} alt="Profile" /><span>Profile</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        <img src={chartsImage} alt="Charts" /><span>Charts</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        <img src={schoolsImage} alt="Schools" /><span>Schools</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        <img src={clubsImage} alt="Clubs" /><span>Clubs</span>
+                    </Link>
+                </li>
+            </ul>
+            <ul className="nav flex-column p-0">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                        <img src={logoutImage} alt="Logout" /><span>Logout</span>
+                    </Link>
+                </li>
+            </ul>
         </div>
-      );
-    }
+    );
+}
+

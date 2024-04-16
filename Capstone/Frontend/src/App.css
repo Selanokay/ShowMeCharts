@@ -104,17 +104,21 @@ input[type=password]:focus {
 
 .side-nav {
   width: 110px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 30px 15px;
-  background: gray;
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   transition: width 0.5s;
+  overflow-x: hidden;
+}
+
+.side-nav:hover {
+  width: 250px;
+}
+
+.nav-link span {
+  display: none;
+  margin-left: 10px; 
+}
+
+.side-nav:hover .nav-link span {
+  display: inline;
 }
 
 ul {
