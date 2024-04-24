@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import logoImage from '../images/logo.png';
 
 
-export default function MainPage() {
+export default function LogIn() {
     return (
         <div>
       {/* Home Link*/}

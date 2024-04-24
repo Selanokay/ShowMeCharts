@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function MainPage() {
+export default function Home() {
   const handleSubmit = async () => {
     try {
 
@@ -30,7 +30,7 @@ export default function MainPage() {
       {/* Button to trigger form submission */}
       <button className="button" onClick={handleSubmit}>Submit Form</button>
       <Link to="/signup" className="button">Sign Up</Link>
-      <Link to="/login" className="button">Login</Link>
+      <Link to="/login" className="button">Log In</Link>
     </div>
   );
 }
