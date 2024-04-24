@@ -1,5 +1,5 @@
 import React from 'react';
-import GetCharts from './components/getcharts.js'; 
+import GetCharts from '../components/getcharts.js'; 
 
 const Charts = () => {
     const { topSongs, topArtists } = GetCharts(); 
