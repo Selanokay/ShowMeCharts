@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useCharts = () => {
+const GetCharts = () => {
     const [topSongs, setTopSongs] = useState([]);
     const [topArtists, setTopArtists] = useState([]);
 
@@ -30,4 +30,4 @@ const useCharts = () => {
     return { topSongs, topArtists };
 };
 
-export default useCharts;
+export default GetCharts;
