@@ -1,6 +1,5 @@
 import React from 'react';
 import logoImage from '../images/logo.png';
-import { Link } from 'react-router-dom';
 
 export default function Profile() { 
     return (
@@ -10,7 +9,7 @@ export default function Profile() {
 
             <br></br>
             <div class="profile-header">
-                <img src="images/logo.png" width="150" height="150"/>
+                <img src={logoImage} width="150" height="150"/>
                     <div class="profile-info">
                         <h1>Name</h1>
                         <h1>School</h1>
@@ -23,7 +22,7 @@ export default function Profile() {
                     <li>
                         <table>
                             <tr>
-                                <td><img src="images/logo.png" alt="Song"/></td>
+                                <td><img src={logoImage} alt="Song"/></td>
                                 <td>Artist Name</td>
                                 <td>Songs Title</td>
                             </tr>
@@ -36,7 +35,7 @@ export default function Profile() {
                     <li>
                         <table>
                             <tr>
-                                <td><img src="images/logo.png" alt="Song"/></td>
+                                <td><img src={logoImage} alt="Song"/></td>
                                 <td>Artist Name</td>
                                 <td>Songs Title</td>
                             </tr>
