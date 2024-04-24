@@ -1,6 +1,5 @@
 import React from 'react';
 import logoImage from '../images/logo.png';
-import { Link } from 'react-router-dom';
 
 export default function Charts() {
     return (
@@ -13,7 +12,7 @@ export default function Charts() {
                 <li>
                     <table>
                         <tr>
-                            <td><img src="Images/logo.png" alt="Song"/></td>
+                            <td><img src={logoImage} alt="Song"/></td>
                             <td>Artist Name</td>
                             <td>Songs Title</td>
                         </tr>
@@ -26,7 +25,7 @@ export default function Charts() {
             <li>
                 <table>
                     <tr>
-                        <td><img src="Images/logo.png" alt="Album"/></td>
+                        <td><img src={logoImage} alt="Album"/></td>
                         <td>Artist Name</td>
                         <td>Album Title</td>
                     </tr>
