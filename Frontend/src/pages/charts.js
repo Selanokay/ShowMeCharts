@@ -1,38 +1,44 @@
 import React from 'react';
-import logoImage from '../images/logo.png';
+import useChartsFetch from './charts-fetch';
 
-export default function Charts() {
+const Charts = () => {
+    const { topSongs, topArtists } = useChartsFetch();
+
     return (
-        // Charts
-            <div class ="header">
+        <div className="header">
             <h1>ProJect GraPhiNg</h1>
-        
+
             <h2>Top Songs</h2>
             <ul>
-                <li>
-                    <table>
-                        <tr>
-                            <td><img src={logoImage} alt="Song"/></td>
-                            <td>Artist Name</td>
-                            <td>Songs Title</td>
-                        </tr>
-                    </table>
-                </li>
-        </ul>
+                {topSongs.map(song => (
+                    <li key={song.id}>
+                        <table>
+                            <tr>
+                                <td><img src={song.image} alt="Song"/></td>
+                                <td>{song.artistName}</td>
+                                <td>{song.songTitle}</td>
+                            </tr>
+                        </table>
+                    </li>
+                ))}
+            </ul>
 
-        <h2>Top Artists</h2>
-        <ul>
-            <li>
-                <table>
-                    <tr>
-                        <td><img src={logoImage} alt="Album"/></td>
-                        <td>Artist Name</td>
-                        <td>Album Title</td>
-                    </tr>
-                </table>
-            </li>
-        </ul>
+            <h2>Top Artists</h2>
+            <ul>
+                {topArtists.map(artist => (
+                    <li key={artist.id}>
+                        <table>
+                            <tr>
+                                <td><img src={artist.image} alt="Album"/></td>
+                                <td>{artist.artistName}</td>
+                                <td>{artist.albumTitle}</td>
+                            </tr>
+                        </table>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
 
-    </div>
-    )
-}
+export default Charts;

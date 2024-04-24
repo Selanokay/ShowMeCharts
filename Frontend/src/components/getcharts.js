@@ -1,44 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const ChartsComponent = () => {
-    const [topArtistsChart, setTopArtistsChart] = useState('');
-    const [topSongsChart, setTopSongsChart] = useState('');
+const getCharts = () => {
+    const [topSongs, setTopSongs] = useState([]);
+    const [topArtists, setTopArtists] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchChartsData = async () => {
             try {
-                const artistsResponse = await axios.get('/api/top-artists-chart');
-                const artistsBlob = await artistsResponse.data;
-
-                const artistsObjectURL = URL.createObjectURL(artistsBlob);
-                setTopArtistsChart(artistsObjectURL);
-
+                // Fetch top songs data
                 const songsResponse = await axios.get('/api/top-songs-chart');
-                const songsBlob = await songsResponse.data;
+                const songsData = await songsResponse.data;
 
-                const songsObjectURL = URL.createObjectURL(songsBlob);
-                setTopSongsChart(songsObjectURL);
+                // Fetch top artists data
+                const artistsResponse = await axios.get('/api/top-artists-chart');
+                const artistsData = await artistsResponse.data;
+
+                // Update state with fetched data
+                setTopSongs(songsData);
+                setTopArtists(artistsData);
             } catch (error) {
-                console.error('Error fetching charts:', error);
+                console.error('Error fetching charts data:', error);
             }
         };
 
-        fetchData();
+        fetchChartsData();
     }, []);
 
-    return (
-        <div>
-            <div className="chart-container">
-                <h2>Top Artists Chart</h2>
-                <img src={topArtistsChart} alt="Top Artists Chart" />
-            </div>
-            <div className="chart-container">
-                <h2>Top Songs Chart</h2>
-                <img src={topSongsChart} alt="Top Songs Chart" />
-            </div>
-        </div>
-    );
+    return { topSongs, topArtists };
 };
 
-export default ChartsComponent;
+export default getCharts;
