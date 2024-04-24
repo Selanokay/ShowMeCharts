@@ -1,8 +1,8 @@
 import React from 'react';
-import getCharts from '../components/getcharts.js';
+import useCharts from '../components/useCharts'; 
 
 const Charts = () => {
-    const { topSongs, topArtists } = getCharts();
+    const { topSongs, topArtists } = useCharts(); 
 
     return (
         <div className="header">
