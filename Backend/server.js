@@ -5,13 +5,10 @@ const musicinfo = require('./musicinfo')
 const fs = require('fs')
 const express = require('express')
 const songRoutes = require('./routes/songs')
-<<<<<<< HEAD:Backend/server.js
 const bodyParser = require('body-parser')
-=======
 const multer = require('multer')
 const path = require('path')
 //const { top_n_songs } = require('./toptensongs')
->>>>>>> e215b994afca910a480639722b36c4bd66363177:Capstone/Backend/src/server.js
 
 //express app
 const app = express()
