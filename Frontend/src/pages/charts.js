@@ -1,8 +1,8 @@
 import React from 'react';
-import useChartsFetch from './charts-fetch';
+import getCharts from './components/getcharts.js';
 
 const Charts = () => {
-    const { topSongs, topArtists } = useChartsFetch();
+    const { topSongs, topArtists } = getCharts();
 
     return (
         <div className="header">
