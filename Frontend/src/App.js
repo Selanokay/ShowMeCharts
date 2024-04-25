@@ -14,6 +14,9 @@ import Clubs from "./pages/clubs.js";
 import Navigation from "./components/navigation.js";
 //import SignUpLogIn from "./components/signuplogin.js";
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "build"))); //lines added to use render for hosting
+
 
 import './App.css'
 
