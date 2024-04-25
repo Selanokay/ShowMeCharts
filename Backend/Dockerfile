@@ -10,10 +10,10 @@ ARG NODE_VERSION=18.12.0
 FROM node:${NODE_VERSION}-alpine as base
 
 # Set working directory for all build stages.
-WORKDIR /Frontend/src/app
+WORKDIR /usr/src/app
 
 COPY . .
-RUN chown -R node:node /Frontend/src/app
+RUN chown -R node:node /usr/src/app
 ################################################################################
 # Create a stage for installing production dependencies.
 FROM base as deps
