@@ -1,9 +1,18 @@
-require('dotenv').config();
+require('dotenv').config()
 
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
-const mongoose = require('mongoose');
-const express = require('express');
-const musicinfo = require('./musicinfo');
+const mongoose = require('mongoose')
+const musicinfo = require('./musicinfo')
+const fs = require('fs')
+const express = require('express')
+const songRoutes = require('./routes/songs')
+const bodyParser = require('body-parser')
+const multer = require('multer')
+const path = require('path')
+//const { top_n_songs } = require('./toptensongs')
+
+//express app
+const app = express()
 
 // Read JSON file
 function readJson(file_path) {
@@ -133,9 +142,6 @@ async function createArtistsBarChart(topArtists) {
     return image; // Return the image buffer
 }
 
-// Express app
-const app = express();
-
 // Middleware
 app.use(express.json());
 
@@ -144,6 +150,71 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 });
+
+//middleware (Use request.render to render pages, if you dont )
+app.use(express.json())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
+
+// disable CORS
+app.use((req, res, next)=>{
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.setHeader("Access-Control-Allow-Methods",
+    "GET, POST, PATCH, DELETE, OPTIONS"
+    );
+    console.log('Middleware');
+    next();
+  })
+
+//Multer middleware setup for handling file uploads. Uploads/ is temporary, actual destination will need to be included.
+// Multer middleware setup for handling file uploads
+const upload = multer({ dest: 'uploads/' })
+
+
+// Route to render the upload form
+app.get('/upload', (req, res) => {
+   res.send(`
+       <h1>Upload JSON File</h1>
+       <form action="/api/upload-json" method="post" enctype="multipart/form-data">
+           <input type="file" name="jsonFile">
+           <button type="submit">Upload</button>
+       </form>
+   `);
+});
+
+
+// Route to handle file upload
+app.post('/api/upload-json', upload.single('jsonFile'), async (req, res) => {
+   try {
+       // Check if file was uploaded
+       if (!req.file) {
+           return res.status(400).send('No file uploaded.');
+       }
+
+
+       // Read uploaded JSON file
+       const jsonData = fs.readFileSync(req.file.path, 'utf8');
+      
+       // Parse JSON data
+       const parsedData = JSON.parse(jsonData);
+
+
+       // Save parsed data into MongoDB
+       await musicinfo.insertMany(parsedData);
+
+
+       // Respond with success message
+       res.status(201).send('JSON file uploaded and data saved to MongoDB.');
+   } catch (error) {
+       console.error('Error uploading JSON file and saving data to MongoDB:', error);
+       res.status(500).send('Internal Server Error');
+   }
+});
+
 
 // Route to fetch all music info from MongoDB listed by most minutes played
 app.get('/api/allsongs', async (req, res) => {
