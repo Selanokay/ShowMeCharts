@@ -215,6 +215,9 @@ app.post('/api/upload-json', upload.single('jsonFile'), async (req, res) => {
    }
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 // Route to fetch all music info from MongoDB listed by most minutes played
 app.get('/api/allsongs', async (req, res) => {
