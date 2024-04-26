@@ -13,12 +13,12 @@ import Clubs from "./pages/clubs.js";
 //import Header from "./components/header.js";
 import Navigation from "./components/navigation.js";
 //import SignUpLogIn from "./components/signuplogin.js";
+import './App.css'
 
 const path = require("path");
 app.use(express.static(path.join(__dirname, "build"))); //lines added to use render for hosting
 
 
-import './App.css'
 
 const App = () => {
     return (
