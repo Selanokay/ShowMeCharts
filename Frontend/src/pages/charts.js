@@ -1,42 +1,71 @@
-import React from 'react';
-import GetCharts from '../components/getcharts.js'; 
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../App.css'; // Import the CSS file for styling
 
 const Charts = () => {
-    const { topSongs, topArtists } = GetCharts(); 
+    const [topArtistsChart, setTopArtistsChart] = useState('');
+    const [topSongsChart, setTopSongsChart] = useState('');
+    const [topArtistsPieChart, setTopArtistsPieChart] = useState('');
+
+    useEffect(() => {
+        const fetchCharts = async () => {
+            try {
+                // Fetch top artists chart
+                const artistsResponse = await axios.get('/api/top-artists-chart', { responseType: 'blob' });
+                if (artistsResponse.status === 200) {
+                    const artistsBlob = artistsResponse.data;
+                    setTopArtistsChart(URL.createObjectURL(artistsBlob));
+                } else {
+                    throw new Error('Failed to fetch top artists chart');
+                }
+
+                // Fetch top songs chart
+                const songsResponse = await axios.get('/api/top-songs-chart', { responseType: 'blob' });
+                if (songsResponse.status === 200) {
+                    const songsBlob = songsResponse.data;
+                    setTopSongsChart(URL.createObjectURL(songsBlob));
+                } else {
+                    throw new Error('Failed to fetch top songs chart');
+                }
+
+                // Fetch top artists pie chart
+                const artistsPieResponse = await axios.get('/api/top-artists-pie-chart', { responseType: 'blob' });
+                if (artistsPieResponse.status === 200) {
+                    const artistsPieBlob = artistsPieResponse.data;
+                    setTopArtistsPieChart(URL.createObjectURL(artistsPieBlob));
+                } else {
+                    throw new Error('Failed to fetch top artists pie chart');
+                }
+
+            } catch (error) {
+                console.error('Error fetching charts:', error);
+            }
+        };
+
+        fetchCharts();
+
+        // Cleanup function
+        return () => {
+            // Cleanup logic if needed
+        };
+    }, []);
 
     return (
-        <div className="header">
-            <h1>ProJect GraPhiNg</h1>
+        <div>
+            <div className="chart-wrapper">
+                <h2>Top Artists Chart</h2>
+                <img src={topArtistsChart} alt="Loading Top Artists Chart..." />
+            </div>
 
-            <h2>Top Songs</h2>
-            <ul>
-                {topSongs.map(song => (
-                    <li key={song.id}>
-                        <table>
-                            <tr>
-                                <td><img src={song.image} alt="Song"/></td>
-                                <td>{song.artistName}</td>
-                                <td>{song.songTitle}</td>
-                            </tr>
-                        </table>
-                    </li>
-                ))}
-            </ul>
+            <div className="chart-wrapper">
+                <h2>Top Songs Chart</h2>
+                <img src={topSongsChart} alt="Loading Top Songs Chart..." />
+            </div>
 
-            <h2>Top Artists</h2>
-            <ul>
-                {topArtists.map(artist => (
-                    <li key={artist.id}>
-                        <table>
-                            <tr>
-                                <td><img src={artist.image} alt="Album"/></td>
-                                <td>{artist.artistName}</td>
-                                <td>{artist.albumTitle}</td>
-                            </tr>
-                        </table>
-                    </li>
-                ))}
-            </ul>
+            <div className="chart-wrapper">
+                <h2>Top Artists Pie Chart</h2>
+                <img src={topArtistsPieChart} alt="Loading Top Artists Pie Chart..." />
+            </div>
         </div>
     );
 };

@@ -26,8 +26,11 @@ function topTenSongs(data) {
 
     // Count occurrences of each song
     data.forEach(entry => {
-        const key = `${entry.artistName} - ${entry.trackName}`;
-        songCounts[key] = (songCounts[key] || 0) + 1;
+        // Exclude entries with "Unknown Artist" or "Unknown Track"
+        if (entry.artistName !== 'Unknown Artist' && entry.trackName !== 'Unknown Track') {
+            const key = `${entry.artistName} - ${entry.trackName}`;
+            songCounts[key] = (songCounts[key] || 0) + 1;
+        }
     });
 
     // Sort by song counts
@@ -40,8 +43,8 @@ function topTenSongs(data) {
 
 // Create top songs bar chart
 async function createSongsBarChart(topSongs) {
-    const width = 800;
-    const height = 600;
+    const width = 875;
+    const height = 650;
 
     const chartCallback = (ChartJS) => {
         ChartJS.defaults.font.family = 'Arial';
@@ -57,7 +60,7 @@ async function createSongsBarChart(topSongs) {
             datasets: [{
                 label: 'Number of Plays',
                 data: topSongs.map(([_, count]) => count),
-                backgroundColor: 'rgba(255, 215, 0, 0.2)',
+                backgroundColor: 'rgba(255, 215, 0, .75)',
                 borderColor: 'rgba(255, 215, 0, 1)',
                 borderWidth: 1
             }]
@@ -65,13 +68,34 @@ async function createSongsBarChart(topSongs) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    ticks: {
+                        color: 'black' // Change the color of the y-axis labels to black
+                    },
+                    grid: {
+                        color: 'black' // Change the color of the y-axis grid lines to black
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'black' // Change the color of the x-axis labels to black
+                    },
+                    grid: {
+                        color: 'black' // Change the color of the x-axis grid lines to black
+                    }
                 }
             },
             plugins: {
-                title: {
-                    display: true,
-                    text: 'Top 10 Most Played Songs'
+                legend: {
+                    labels: {
+                        color: 'black' // Change the color of the legend labels to black
+                    }
+                },
+                animation: {
+                    duration: 1500, // Duration of the animation in milliseconds
+                    easing: 'easeInOutCirc', // Easing function for the animation
+                    from: {
+                        y: 'bottom' // Bars will flow in from the bottom
+                    }
                 }
             }
         }
@@ -87,8 +111,11 @@ function topTenArtists(data) {
 
     // Count occurrences of each artist
     data.forEach(entry => {
-        const artist = entry.artistName;
-        artistCounts[artist] = (artistCounts[artist] || 0) + 1;
+        // Exclude entries with "Unknown Artist"
+        if (entry.artistName !== 'Unknown Artist') {
+            const artist = entry.artistName;
+            artistCounts[artist] = (artistCounts[artist] || 0) + 1;
+        }
     });
 
     // Sort by artist counts
@@ -99,7 +126,6 @@ function topTenArtists(data) {
     return sortedArtists;
 }
 
-// Create top artists bar chart
 async function createArtistsBarChart(topArtists) {
     const width = 800;
     const height = 600;
@@ -118,7 +144,7 @@ async function createArtistsBarChart(topArtists) {
             datasets: [{
                 label: 'Number of Plays',
                 data: topArtists.map(([_, count]) => count),
-                backgroundColor: 'rgba(255, 215, 0, 0.2)', 
+                backgroundColor: 'rgba(255, 215, 0, .75)', 
                 borderColor: 'rgba(255, 215, 0, 1)',
                 borderWidth: 1
             }]
@@ -126,13 +152,34 @@ async function createArtistsBarChart(topArtists) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    ticks: {
+                        color: 'black' // Change the color of the y-axis labels to black
+                    },
+                    grid: {
+                        color: 'black' // Change the color of the y-axis grid lines to black
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: 'black' // Change the color of the x-axis labels to black
+                    },
+                    grid: {
+                        color: 'black' // Change the color of the x-axis grid lines to black
+                    }
                 }
             },
             plugins: {
-                title: {
-                    display: true,
-                    text: 'Top 10 Artists By Plays'
+                legend: {
+                    labels: {
+                        color: 'black' // Change the color of the legend labels to black
+                    }
+                },
+                animation: {
+                    duration: 1500, // Duration of the animation in milliseconds
+                    easing: 'easeInOutCirc', // Easing function for the animation
+                    from: {
+                        y: 'bottom' // Bars will flow in from the bottom
+                    }
                 }
             }
         }
@@ -141,6 +188,66 @@ async function createArtistsBarChart(topArtists) {
     const image = await chartCanvas.renderToBuffer(configuration);
     return image; // Return the image buffer
 }
+
+async function createArtistsPieChart(topArtists) {
+    const width = 800;
+    const height = 600;
+
+    const chartCallback = (ChartJS) => {
+        ChartJS.defaults.font.family = 'Arial';
+        ChartJS.defaults.font.size = 18;
+    };
+
+    const chartCanvas = new ChartJSNodeCanvas({ width, height, chartCallback });
+
+    // Generate 25 different sets of colors
+    const backgroundColors = generateRandomColors(25, 0.75);
+    const borderColors = generateRandomColors(25, 1);
+
+    const configuration = {
+        type: 'pie',
+        data: {
+            labels: topArtists.map(([artist, _]) => artist),
+            datasets: [{
+                label: 'Number of Plays',
+                data: topArtists.map(([_, count]) => count),
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'black' // Change the color of the legend labels to black
+                    }
+                }
+            }
+        }
+    };
+
+    const image = await chartCanvas.renderToBuffer(configuration);
+    return image; // Return the image buffer
+}
+
+// Function to generate random colors
+function generateRandomColors(count, alpha) {
+    const colors = [];
+    for (let i = 0; i < count; i++) {
+        const color = `rgba(${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)}, ${getRandomNumber(0, 255)}, ${alpha})`;
+        colors.push(color);
+    }
+    return colors;
+}
+
+// Function to generate a random number within a range
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+
 
 // Middleware
 app.use(express.json());
@@ -230,15 +337,25 @@ app.get('/api/allsongs', async (req, res) => {
 // Route to generate and send top artists chart
 app.get('/api/top-artists-chart', async (req, res) => {
     try {
-        // Get top artists directly from MongoDB
-        const topArtists = await musicinfo.aggregate([
-            { $group: { _id: "$artistName", count: { $sum: 1 } } },
-            { $sort: { count: -1 } },
-            { $limit: 10 }
-        ]);
+        // Get all music info from MongoDB
+        const allMusicInfo = await musicinfo.find();
+
+        // Filter out entries with "Unknown Artist"
+        const filteredData = allMusicInfo.filter(entry => entry.artistName !== 'Unknown Artist');
+
+        // Get top artists from filtered data
+        const topArtists = filteredData.reduce((artistCounts, entry) => {
+            artistCounts[entry.artistName] = (artistCounts[entry.artistName] || 0) + 1;
+            return artistCounts;
+        }, {});
+
+        // Sort and limit to top 10 artists
+        const sortedArtists = Object.entries(topArtists)
+            .sort(([, countA], [, countB]) => countB - countA)
+            .slice(0, 10);
 
         // Extract artist names and counts
-        const topArtistsData = topArtists.map(artist => [artist._id, artist.count]);
+        const topArtistsData = sortedArtists.map(([artist, count]) => [artist, count]);
 
         // Generate bar chart image
         const chartImage = await createArtistsBarChart(topArtistsData);
@@ -258,15 +375,26 @@ app.get('/api/top-artists-chart', async (req, res) => {
 // Route to generate and send top songs chart
 app.get('/api/top-songs-chart', async (req, res) => {
     try {
-        // Get top songs directly from MongoDB
-        const topSongs = await musicinfo.aggregate([
-            { $group: { _id: { artist: "$artistName", song: "$trackName" }, count: { $sum: 1 } } },
-            { $sort: { count: -1 } },
-            { $limit: 10 }
-        ]);
+        // Get all music info from MongoDB
+        const allMusicInfo = await musicinfo.find();
+
+        // Filter out entries with "Unknown Artist" and "Unknown Track"
+        const filteredData = allMusicInfo.filter(entry => entry.artistName !== 'Unknown Artist' && entry.trackName !== 'Unknown Track');
+
+        // Get top songs from filtered data
+        const topSongs = filteredData.reduce((songCounts, entry) => {
+            const key = `${entry.artistName} - ${entry.trackName}`;
+            songCounts[key] = (songCounts[key] || 0) + 1;
+            return songCounts;
+        }, {});
+
+        // Sort and limit to top 10 songs
+        const sortedSongs = Object.entries(topSongs)
+            .sort(([, countA], [, countB]) => countB - countA)
+            .slice(0, 10);
 
         // Extract song names and counts
-        const topSongsData = topSongs.map(song => [`${song._id.artist} - ${song._id.song}`, song.count]);
+        const topSongsData = sortedSongs.map(([song, count]) => [song, count]);
 
         // Generate bar chart image
         const chartImage = await createSongsBarChart(topSongsData);
@@ -282,6 +410,106 @@ app.get('/api/top-songs-chart', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+// Route to generate and send top artists pie chart
+app.get('/api/top-artists-pie-chart', async (req, res) => {
+    try {
+        // Get all music info from MongoDB
+        const allMusicInfo = await musicinfo.find();
+
+        // Filter out entries with "Unknown Artist"
+        const filteredData = allMusicInfo.filter(entry => entry.artistName !== 'Unknown Artist');
+
+        // Get top artists from filtered data
+        const topArtists = filteredData.reduce((artistCounts, entry) => {
+            artistCounts[entry.artistName] = (artistCounts[entry.artistName] || 0) + 1;
+            return artistCounts;
+        }, {});
+
+        // Sort and limit to top 25 artists
+        const sortedArtists = Object.entries(topArtists)
+            .sort(([, countA], [, countB]) => countB - countA)
+            .slice(0, 25);
+
+        // Extract artist names and counts
+        const topArtistsData = sortedArtists.map(([artist, count]) => [artist, count]);
+
+        // Generate pie chart image
+        const chartImage = await createArtistsPieChart(topArtistsData);
+
+        // Send the image as response
+        res.writeHead(200, {
+            'Content-Type': 'image/png',
+            'Content-Length': chartImage.length
+        });
+        res.end(chartImage);
+    } catch (error) {
+        console.error('Error generating top artists pie chart:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+// Function to generate and send top songs chart by ms played
+app.get('/api/top-songs-ms-chart', async (req, res) => {
+    const trackName = req.query.track; // Get track name from query parameter
+
+    try {
+        // Get all music info from MongoDB for the specified track
+        const songMusicInfo = await musicinfo.find({ trackName: trackName });
+
+        // Convert msPlayed to numbers before sorting
+        songMusicInfo.forEach(entry => {
+            entry.msPlayed = Number(entry.msPlayed);
+        });
+
+        // Sort the music info by milliseconds played
+        songMusicInfo.sort((a, b) => b.msPlayed - a.msPlayed);
+
+        // Limit to top 10 songs
+        const topSongs = songMusicInfo.slice(0, 10);
+
+        // Extract song names
+        const topSongsData = topSongs.map(entry => entry.trackName);
+
+        // Generate bar chart image
+        const chartImage = await createSongsBarChart(topSongsData);
+
+        // Send the image as response
+        res.writeHead(200, {
+            'Content-Type': 'image/png',
+            'Content-Length': chartImage.length
+        });
+        res.end(chartImage);
+    } catch (error) {
+        console.error('Error generating top songs chart:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+
+app.get('/api/search-artist/:artistName', async (req, res) => {
+    try {
+        const artistName = req.params.artistName;
+
+        // Find all music info where artistName matches the provided artistName
+        const artistSongs = await musicinfo.find({ artistName: { $regex: new RegExp(artistName, "i") } });
+
+        if (artistSongs.length === 0) {
+            res.status(404).json({ message: 'No songs found for the artist.' });
+            return;
+        }
+
+        // Respond with the found songs by the artist
+        res.status(200).json(artistSongs);
+    } catch (error) {
+        console.error('Error searching for artist:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
 
 // Connect to MongoDB and start server
 mongoose.connect(process.env.MONGO_URI)

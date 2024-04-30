@@ -4,15 +4,15 @@ import logoImage from '../images/logo.png';
 export default function Profile() { 
     return (
        //Profile Info
-        <div class="header">
-            <h1>ProJect GraPhiNg</h1>
-
+        <div className="header">
             <br></br>
-            <div class="profile-header">
-                <img src={logoImage} width="150" height="150"/>
-                    <div class="profile-info">
-                        <h1>Name</h1>
-                        <h1>School</h1>
+            <br></br>
+            <br></br>
+            <div className="profile-header">
+                <img src={logoImage} alt="Profile Logo" width="150" height="150"/>
+                    <div className="profile-info">
+                        <h1>Name: </h1>
+                        <h1>School: </h1>
                     </div>
             </div>
             <br></br>
@@ -22,9 +22,9 @@ export default function Profile() {
                     <li>
                         <table>
                             <tr>
-                                <td><img src={logoImage} alt="Song"/></td>
+                                <td><img src={logoImage} alt="Top Song" /></td>
                                 <td>Artist Name</td>
-                                <td>Songs Title</td>
+                                <td>Song Title</td>
                             </tr>
                         </table>
                     </li>
@@ -35,9 +35,9 @@ export default function Profile() {
                     <li>
                         <table>
                             <tr>
-                                <td><img src={logoImage} alt="Song"/></td>
+                                <td><img src={logoImage} alt="Top Artist" /></td>
                                 <td>Artist Name</td>
-                                <td>Songs Title</td>
+                                <td>Song Title</td>
                             </tr>
                         </table>
                     </li>
