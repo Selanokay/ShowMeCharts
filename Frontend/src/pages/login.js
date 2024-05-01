@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
+import { useLogIn } from '../hooks/useLogIn'
 import { Link } from 'react-router-dom';
 import logoImage from '../images/logo.png';
 
 const LogIn = () => {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { login, error, isLoading } = useLogIn()
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
-    console.log(email, password);
+    await login(email, password)
+
   };
 
   return (  
@@ -21,7 +26,7 @@ const LogIn = () => {
         </Link>
       </div>
 
-      {/* Sign Up Form */}
+      {/* Log In Form */}
       <div className="container">
         <div className="form-container">
           <form id="login" onSubmit={handleSubmit}>
@@ -51,7 +56,8 @@ const LogIn = () => {
               />
 
             </fieldset>
-            <input type="submit" value="Log In" className="button" />
+            <button disabled={isLoading}>Log in</button>
+            {error && <div className="error">{error}</div>}
           </form>
         </div>
       </div>

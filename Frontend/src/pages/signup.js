@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useSignUp } from '../hooks/useSignUp.js';
+
+import { useSignUp } from '../hooks/useSignUp';
 import { Link } from 'react-router-dom';
 import logoImage from '../images/logo.png';
 

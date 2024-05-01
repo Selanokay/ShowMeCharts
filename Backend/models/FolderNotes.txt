@@ -1,1 +1,0 @@
-This directory contains the database models or schemas for your application. Each model represents a specific data structure and handles interactions with the database.

@@ -9,10 +9,15 @@ const songRoutes = require('./routes/songs')
 const bodyParser = require('body-parser')
 const multer = require('multer')
 const path = require('path')
+const http = require("http");
+const { normalizePort, onError, onListening } = require("./portNormalization");
+
+const userRoutes = require('./routes/user')
+
 //const { top_n_songs } = require('./toptensongs')
 
 //express app
-const app = express()
+const app = express();
 
 // Read JSON file
 function readJson(file_path) {
@@ -257,6 +262,9 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 });
+
+//routes for loginsignup nerms
+app.use('/api/user', userRoutes)
 
 //middleware (Use request.render to render pages, if you dont )
 app.use(express.json())
@@ -511,13 +519,23 @@ app.get('/api/search-artist/:artistName', async (req, res) => {
 
 
 
-// Connect to MongoDB and start server
+const port = normalizePort(process.env.PORT || "4000");
+app.set("port", port); // Setting the port for the Express application
+
+// Separate function to start the server
+const startServer = () => {
+    const server = http.createServer(app); // Creating an HTTP server using the Express application
+    server.on("error", onError);
+    server.on("listening", () => onListening(server));
+    server.listen(port); // Listening on the specified port
+    console.log('Listening on port:', port)
+};
+
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log('Connected to MongoDB');
-        app.listen(process.env.PORT, () => {
-            console.log('Listening on port', process.env.PORT);
-        });
+        startServer(); // Start the server after successful MongoDB connection
     })
     .catch((error) => {
         console.log('Error connecting to MongoDB:', error);
