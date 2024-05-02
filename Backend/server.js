@@ -1,4 +1,10 @@
+const path = require('path');
+const { fileURLToPath } = require('url');
+
 require('dotenv').config()
+
+//const __filename = fileURLToPath(import.meta.url);
+//const __dirname = path.dirname(__filename);
 
 const { ChartJSNodeCanvas } = require('chartjs-node-canvas');
 const mongoose = require('mongoose')
@@ -8,22 +14,29 @@ const express = require('express')
 const songRoutes = require('./routes/songs')
 const bodyParser = require('body-parser')
 const multer = require('multer')
-const path = require('path')
 const http = require("http");
 const { normalizePort, onError, onListening } = require("./portNormalization");
 
 const userRoutes = require('./routes/user')
 
-//const { top_n_songs } = require('./toptensongs')
-
 //express app
 const app = express();
+
+app.use(express.static(path.join(__dirname, '/Frontend/public')))
+
+
+//app.get("*", (req, res) =>
+//   res.sendFile(path.join(__dirname, "/Frontend/public/index.html"))
+//);
+
 
 // Read JSON file
 function readJson(file_path) {
     const data = JSON.parse(fs.readFileSync(file_path, 'utf-8'));
     return data;
 }
+
+
 
 // Extract top ten most listened-to songs
 function topTenSongs(data) {
@@ -253,7 +266,7 @@ function getRandomNumber(min, max) {
 
 
 
-
+console.log(__dirname);
 // Middleware
 app.use(express.json());
 
