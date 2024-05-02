@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MainPage() {
+export default function Header() {
     return (
        
          <div className="header">

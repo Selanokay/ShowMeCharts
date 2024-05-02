@@ -28,7 +28,6 @@ export default function Navigation() {
             <Link to="/" className="logo-link"> 
               <img src={logoImage} alt="Logo" className="logo-img" />
             </Link>
-            <p className="logo-text">ShowMeCharts</p>
           </div>
 
           <ul>
@@ -41,7 +40,7 @@ export default function Navigation() {
               </Link>
 
               <Link to="/songBillboard" className="profile-link">
-                <li><img src={schoolsImage} alt="Schools"/><p>Schools</p></li>
+                <li><img src={schoolsImage} alt="Schools"/><p>Top 100 Songs</p></li>
               </Link>
 
               <Link to="/" className="profile-link">

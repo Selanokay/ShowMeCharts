@@ -17,7 +17,7 @@ import Footer from "./components/Footer";
 
 //import components
 
-//import Header from "./components/header.js";
+import Header from "./components/header.js";
 import Navigation from "./components/navigation.js";
 //import SignUpLogIn from "./components/signuplogin.js";
 

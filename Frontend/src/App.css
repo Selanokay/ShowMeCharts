@@ -38,11 +38,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1000; 
+  height: 100vh; 
+  background-color: transparent; 
 }
 
 .form-container {
-  width: 60%; 
+  width: 60%;
   margin: 50px;
 }
 
@@ -73,6 +74,28 @@ legend {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.btn-custom-primary {
+  background-color: #e0ad12;
+  border-color: #e0ad12;
+}
+
+.btn-custom-primary:hover {
+  background-color: #c4930e; 
+  border-color: #c4930e;
+}
+
+.btn-custom-link {
+  color: #e0ad12;
+}
+
+.btn-custom-link:hover {
+  color: #c4930e;
+}
+
+.lighter-bg {
+  background-color: #bfbfbf; 
+}
+
 input[type=text],
 input[type=password],
 input[type=email] {
@@ -85,7 +108,8 @@ input[type=email] {
 }
 
 input[type=text]:focus,
-input[type=password]:focus {
+input[type=password]:focus,
+input[type=email]:focus {
   background-color: #e0ad12;
 }
 

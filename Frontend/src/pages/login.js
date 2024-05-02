@@ -16,7 +16,7 @@ const LogIn = () => {
 
   return (  
     <div className="d-flex justify-content-center align-items-center min-vh-100 "> 
-      <div className="container-lg bg-white p-4 rounded shadow"> 
+      <div className="container-lg p-4 rounded shadow lighter-bg" style={{ maxWidth: "600px", backgroundColor: "#c0c0c0" }}>
         {/* Home Link */}
         <div className="text-center mb-4">
           <Link to="/" className="logo-link"> 
@@ -30,7 +30,7 @@ const LogIn = () => {
             <legend className="text-center">Log In</legend>
 
             <div className="text-center">
-              <p>Don't have an account? <Link to="/signup" className="btn btn-link">Sign Up</Link></p>
+              <p>Don't have an account? <Link to="/signup" className="btn btn-custom-primary">Sign Up</Link></p>
             </div>
 
             <div className="mb-2">
@@ -62,9 +62,9 @@ const LogIn = () => {
             </div>
 
           </fieldset>
-          
+
           <div className="mb-3 text-center">
-            <button type="submit" className="btn btn-primary" disabled={isLoading}>Log in</button>
+            <button type="submit" className="btn btn-custom-primary" disabled={isLoading}>Log in</button>
           </div>
 
           {error && <div className="error text-center">{error}</div>}

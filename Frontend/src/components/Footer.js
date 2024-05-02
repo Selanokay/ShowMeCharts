@@ -9,25 +9,18 @@ function Footer() {
           Home
         </a>
       </section>
-      <section className="footer-info d-flex justify-content-center">
-        <section className="footer-info-left text-center">
+      <section className="footer-info d-flex justify-content-center mb-4">
+        <section className="footer-info-left text-center me-4">
           <section className="footer-info__name">
-            <h4>ShowMeCharts</h4>
-          </section>
-          <section className="footer-info__returns">
-            Returns Policy <br /> Delivery
+            <h4 className="mb-0">ShowMeCharts</h4>
           </section>
         </section>
-        <section className="footer-info-center text-center">
-          <section className="footer-info__email">projectgraphing@gmail.com</section>
-          <section className="footer-info__terms">
+        <section className="footer-info-center text-center ms-4">
+          <section className="footer-info__email">
+            Contact Us: projectgraphing@gmail.com
           </section>
-        </section>
-        <section className="footer-info-right text-center">
-          <section className="footer-info__number">99999999999</section>
         </section>
       </section>
-      <hr className="footer-separator" />
     </section>
   );
 }
