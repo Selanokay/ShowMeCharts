@@ -97,6 +97,24 @@ input[type=password]:focus {
 }
 
 /* styles for profile/chart/home */
+.prof-header {
+  display: flex; 
+}
+
+.bio {
+  flex: 1; 
+}
+
+.top-list {
+  flex: 1;
+  margin-left: 20px;
+  margin-top: 30 px;
+}
+
+.upload-button {
+  align-items: center;
+}
+
 .section-header {
   margin-top: 20px;
 }
