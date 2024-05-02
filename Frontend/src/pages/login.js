@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLogIn } from '../hooks/useLogIn'
+import { useLogIn } from '../hooks/useLogIn';
 import { Link } from 'react-router-dom';
 import logoImage from '../images/logo.png';
 
@@ -7,59 +7,70 @@ const LogIn = () => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login, error, isLoading } = useLogIn()
+  const { login, error, isLoading } = useLogIn();
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
-
-    await login(email, password)
-
+    await login(email, password);
   };
 
   return (  
-    <div>
-      {/* Home Link */}
-      <div className="logo-container">
-        <Link to="/" className="logo-link"> 
-          <img src={logoImage} alt="Logo" className="logo-img" />
-        </Link>
-      </div>
+    <div className="d-flex justify-content-center align-items-center min-vh-100 "> 
+      <div className="container-lg bg-white p-4 rounded shadow"> 
+        {/* Home Link */}
+        <div className="text-center mb-4">
+          <Link to="/" className="logo-link"> 
+            <img src={logoImage} alt="Logo" className="logo-img" />
+          </Link>
+        </div>
 
-      {/* Log In Form */}
-      <div className="container">
-        <div className="form-container">
-          <form id="login" onSubmit={handleSubmit}>
-            <fieldset>
-              <legend>Log In</legend>
+        {/* Log In Form */}
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <legend className="text-center">Log In</legend>
 
-              <br></br>
-              <p>Don't have an account? <Link to="/signup" className="button">Sign Up</Link></p>
-              <br></br>
+            <div className="text-center">
+              <p>Don't have an account? <Link to="/signup" className="btn btn-link">Sign Up</Link></p>
+            </div>
 
-              <label htmlFor="email">Email:</label>
+            <div className="mb-2">
+              <label htmlFor="email" className="form-label visually-hidden">Email</label>
               <input 
                 type="email"
+                className="form-control"
                 id="email"
                 name="email"
+                placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
+                required
               />
+            </div>
 
-              <label htmlFor="password">Password:</label>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label visually-hidden">Password</label>
               <input 
                 type="password" 
+                className="form-control"
                 id="password"
                 name="password"
+                placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
+                required
               />
+            </div>
 
-            </fieldset>
-            <button disabled={isLoading}>Log in</button>
-            {error && <div className="error">{error}</div>}
-          </form>
-        </div>
+          </fieldset>
+          
+          <div className="mb-3 text-center">
+            <button type="submit" className="btn btn-primary" disabled={isLoading}>Log in</button>
+          </div>
+
+          {error && <div className="error text-center">{error}</div>}
+
+        </form>
+
       </div>
     </div>
   );

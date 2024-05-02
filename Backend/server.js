@@ -37,9 +37,8 @@ function readJson(file_path) {
 }
 
 
-
 // Extract top ten most listened-to songs
-function topTenSongs(data) {
+/*function topTenSongs(data) {
     const songCounts = {};
 
     // Count occurrences of each song
@@ -57,7 +56,7 @@ function topTenSongs(data) {
                               .slice(0, 10);
 
     return sortedSongs;
-}
+}*/
 
 // Create top songs bar chart
 async function createSongsBarChart(topSongs) {
@@ -124,7 +123,7 @@ async function createSongsBarChart(topSongs) {
 }
 
 // Extract top ten most listened-to artists
-function topTenArtists(data) {
+/*function topTenArtists(data) {
     const artistCounts = {};
 
     // Count occurrences of each artist
@@ -142,7 +141,7 @@ function topTenArtists(data) {
                                   .slice(0, 10);
 
     return sortedArtists;
-}
+}*/
 
 async function createArtistsBarChart(topArtists) {
     const width = 800;
@@ -469,6 +468,73 @@ app.get('/api/top-artists-pie-chart', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+// Route to get top 100 songs by count
+app.get('/api/top-songs-list', async (req, res) => {
+    try {
+      // Aggregate pipeline to group by artist and track name and count occurrences
+      const topSongs = await musicinfo.aggregate([
+        {
+          $group: {
+            _id: { artistName: '$artistName', trackName: '$trackName' },
+            count: { $sum: 1 }
+          }
+        },
+        {
+          $sort: { count: -1 } // Sort by count in descending order
+        },
+        {
+          $limit: 100 // Limit to top 100 songs
+        },
+        {
+          $project: {
+            _id: 0, // Exclude _id field from the result
+            artist: '$_id.artistName',
+            song: '$_id.trackName',
+            count: 1
+          }
+        }
+      ]);
+  
+      res.json(topSongs);
+    } catch (error) {
+      console.error('Error fetching top songs list:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+app.get('/api/top-artists-list', async (req, res) => {
+    try {
+        // Get all music info from MongoDB
+        const allMusicInfo = await musicinfo.find();
+
+        // Filter out entries with "Unknown Artist"
+        const filteredData = allMusicInfo.filter(entry => entry.artistName !== 'Unknown Artist');
+
+        // Get top artists from filtered data
+        const topArtists = filteredData.reduce((artistCounts, entry) => {
+            artistCounts[entry.artistName] = (artistCounts[entry.artistName] || 0) + 1;
+            return artistCounts;
+        }, {});
+
+        // Sort and limit to top 100 artists
+        const sortedArtists = Object.entries(topArtists)
+            .sort(([, countA], [, countB]) => countB - countA)
+            .slice(0, 100);
+
+        // Extract artist names and counts
+        const topArtistsData = sortedArtists.map(([artist, count]) => ({ artist, count }));
+
+        // Return the top 100 artists
+        res.json(topArtistsData);
+        
+    } catch (error) {
+        console.error('Error generating top artists list:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
 
 
 // Function to generate and send top songs chart by ms played

@@ -65,9 +65,12 @@ const Charts = () => {
             <div className="chart-wrapper">
                 <h2>Top Artists Pie Chart</h2>
                 <img src={topArtistsPieChart} alt="Loading Top Artists Pie Chart..." />
+                <br></br>
             </div>
         </div>
     );
 };
+
+    
 
 export default Charts;
