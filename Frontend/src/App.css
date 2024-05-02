@@ -5,7 +5,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background-color: gray;
+}
+
+body {
+  background-color: gray; 
 }
 
 /* login signup styles */
@@ -21,13 +24,13 @@
 }
 
 .logo-img {
-  width: 75px; 
-  height: 75px; 
+  width: 80px; 
+  height: 65px; 
 }
 
 .logo-text {
   font-size: 32px;
-  padding-left: 10px;
+  padding-left: 14px;
   font-weight: bold;
 }
 
@@ -110,7 +113,7 @@ input[type=password]:focus {
   top: 0;
   left: 0;
   padding: 30px 15px;
-  background: gray;
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
@@ -118,9 +121,22 @@ input[type=password]:focus {
   transition: width 0.5s;
 }
 
+.side-nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px; /* adjust the width as needed */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+
+
 ul {
   list-style: none;
   padding: 0 15px;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 ul li {
@@ -129,11 +145,13 @@ ul li {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 ul li img {
   width: 30px;
   margin-right: 0px;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 
 ul li p {
@@ -161,7 +179,7 @@ ul li p {
 .signup-login {
   position: absolute;
   top: 20px;
-  right: 15px;
+  right: 15px; 
 }
 
 *.signup-login button {
@@ -175,7 +193,8 @@ ul li p {
 
 .charts-container {
   display: flex;
-  flex-wrap: wrap; /* Allow content to wrap to the next line */
+  /*flex-wrap: wrap; Allow content to wrap to the next line */
+  justify-content:center;
   margin-top: 45px;
   margin-left: 150px;
 }
@@ -183,5 +202,33 @@ ul li p {
 .chart-wrapper {
   margin-left: 20px;
   text-align: center;
-  flex: 1 0 300px; 
+  flex: 1 0 calc(50% - 40px); 
+  max-width: calc(50%-40px);
+  
+}
+
+/* SONG BILLBOARD DO NOT FUCKING TOUCH */
+.artist-billboard {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.artist-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.artist {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.artist h3 {
+  margin-top: 0;
+}
+
+.artist p {
+  margin-bottom: 0;
 }

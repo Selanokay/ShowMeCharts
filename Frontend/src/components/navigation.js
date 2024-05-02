@@ -40,7 +40,7 @@ export default function Navigation() {
                 <li><img src={chartsImage} alt="Charts"/><p>Charts</p></li>
               </Link>
 
-              <Link to="/" className="profile-link">
+              <Link to="/songBillboard" className="profile-link">
                 <li><img src={schoolsImage} alt="Schools"/><p>Schools</p></li>
               </Link>
 

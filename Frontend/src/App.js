@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import pages
 
@@ -10,6 +11,9 @@ import Profile from "./pages/profile.js";
 import Charts from "./pages/charts.js";
 import Schools from "./pages/schools.js";
 import Clubs from "./pages/clubs.js";
+import ArtistBillboard from "./pages/artistBillboard.js";
+import SongBillboard from "./pages/songBillboard.js";
+import Footer from "./components/Footer";
 
 //import components
 
@@ -34,7 +38,10 @@ const App = () => {
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/schools" element={<Schools />} />
                     <Route path="/clubs" element={<Clubs />} />
+                    <Route path="/songBillboard" element={<SongBillboard />} />
+                    <Route path="/artistBillboard" element={<ArtistBillboard />} />
                 </Routes>
+                <Footer />
             </div>
         </Router>
     );
