@@ -20,7 +20,19 @@ export default function Profile() {
                     <h1>School: University of Missouri-Columbia</h1>
                 </div>
             </div>
-            <div>
+            <div className = "prof-header">
+                <div className="bio">
+                    <h2>Bio</h2>
+                    <p>Mizzou Student and music fan!</p>
+                </div>
+                <div className="upload-button">
+                    <form action="/api/upload-json" method="post" encType="multipart/form-data">
+                        <input type="file" name="jsonFile" />
+                        <button type="submit">Upload Your Music!</button>
+                    </form>
+                </div>
+            </div>
+            <div className = "prof-header">
                 <h2 className="section-header">Your Top Songs</h2>
                 <ul className="top-list">
                     <li>
