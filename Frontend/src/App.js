@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import pages
-
 //import Upload from "./pages/upload.js";
 import SignUp from "./pages/signup.js"; 
 import LogIn from "./pages/login.js"; 
@@ -16,10 +15,9 @@ import SongBillboard from "./pages/songBillboard.js";
 import Footer from "./components/Footer";
 
 //import components
-
-import Header from "./components/header.js";
+//import Header from "./components/header.js";
 import Navigation from "./components/navigation.js";
-//import SignUpLogIn from "./components/signuplogin.js";
+import SignUpLogIn from "./components/signuplogin.js";
 
 import './App.css'
 
@@ -31,6 +29,7 @@ const App = () => {
         <Router>
             <div className="App">
                 <Navigation />
+                <SignUpLogIn />
                 <Routes>
                     <Route path="/" element={<Charts />} />
                     <Route path="/signup" element={<SignUp />} />
@@ -42,6 +41,7 @@ const App = () => {
                     <Route path="/artistBillboard" element={<ArtistBillboard />} />
                 </Routes>
                 <Footer />
+
             </div>
         </Router>
     );

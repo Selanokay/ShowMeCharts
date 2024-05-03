@@ -31,6 +31,16 @@ const SongBillboard = () => {
         };
     }, []);
 
+    /*seEffect(() => {
+        // Apply the background only to the current page
+        document.body.style.background = 'linear-gradient(lightgreen, lightgray, gray)';
+        
+        // Cleanup function to remove the background when the component unmounts
+        return () => {
+            document.body.style.background = '';
+        };
+    }, []);*/
+
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -40,15 +50,34 @@ const SongBillboard = () => {
     }
 
     return (
-        <div>
-            <h2>Top 100 Songs</h2>
-            <ul>
-                {top100Songs.map((song, index) => (
-                    <li key={index}>
-                        {song.artist} - {song.song} ({song.count})
-                    </li>
-                ))}
-            </ul>
+        <div style={{ backgroundColor: 'black', padding: '20px', display: 'flex', justifyContent: 'center', width: 'fit-content', margin: 'auto' }}>
+            <div style={{ position: 'relative', zIndex: 1, backgroundColor: 'lightgreen', borderRadius: '15px', padding: '20px', color: 'black' }}>
+                <center>
+                    <h2>Top 100 Songs</h2>
+                </center>
+                <table style={{ margin: 'auto', borderCollapse: 'collapse' }}>
+                    <thead>
+                        <tr>
+                            <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Rank</th>
+                            <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Artist</th>
+                            <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Song Name</th>
+                            <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Total Plays</th>
+                        </tr>
+                    </thead>
+                    <tbody style={{ textAlign: 'center' }}>
+                        {top100Songs.map((song, index) => (
+                            (song.artist !== 'Unknown Artist' && song.song !== 'Unknown Track') && (
+                                <tr key={index}>
+                                    <td style={{ border: '1px solid black', padding: '8px' }}>#{index + 1}</td>
+                                    <td style={{ border: '1px solid black', padding: '8px' }}>{song.artist}</td>
+                                    <td style={{ border: '1px solid black', padding: '8px' }}>{song.song}</td>
+                                    <td style={{ border: '1px solid black', padding: '8px' }}>{song.count}</td>
+                                </tr>
+                            )
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

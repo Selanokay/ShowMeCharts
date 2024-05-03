@@ -52,6 +52,7 @@ const Charts = () => {
 
     return (
         <div>
+            
             <div className="chart-wrapper">
                 <h2>Top Artists Chart</h2>
                 <img src={topArtistsChart} alt="Loading Top Artists Chart..." />

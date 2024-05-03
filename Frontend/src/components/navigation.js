@@ -8,7 +8,7 @@ import chartsImage from '../images/charts.png';
 import clubsImage from '../images/clubs.png';
 import logoImage from '../images/logo.png';
 import logoutImage from '../images/logout.png';
-import schoolsImage from '../images/schools.png';
+import schoolsImage from '../images/arrowup.png';
 import { Link } from 'react-router-dom';
 
 export default function Navigation() {
@@ -21,7 +21,6 @@ export default function Navigation() {
   }
 
     return (
-        //<> and </> is used to call multiple functions in JS HTML
         <div className="side-nav">
 
           <div className="logo-container">
@@ -35,7 +34,7 @@ export default function Navigation() {
                 <li><img src={profileImage} alt="Profile"/><p>Profile</p></li>
               </Link>
 
-              <Link to="/charts" className="profile-link">
+              <Link to="/" className="profile-link">
                 <li><img src={chartsImage} alt="Charts"/><p>Charts</p></li>
               </Link>
 
@@ -61,12 +60,7 @@ export default function Navigation() {
               </div>
             )}
 
-            {!user && (
-              <div>
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Signup</Link>
-              </div>
-            )}
+
 
           </ul>
 

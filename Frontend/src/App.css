@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: gray; 
+  background: linear-gradient(lightgreen, lightgray, gray); 
 }
 
 /* login signup styles */
@@ -125,28 +125,31 @@ input[type=email]:focus {
 
 /* styles for profile/chart/home */
 .prof-header {
-  display: flex; 
+  display: flex;
 }
 
 .bio {
-  flex: 1; 
+  flex: 1;
+  padding-right: 20px;
 }
 
 .top-list {
   flex: 1;
   margin-left: 20px;
-  margin-top: 30 px;
 }
 
 .upload-button {
+  display: flex;
   align-items: center;
 }
 
 .section-header {
   margin-top: 20px;
+  font-weight: bold;
 }
+
 .profile-header {
-  margin-top: 200px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
 }
@@ -162,45 +165,49 @@ input[type=email]:focus {
 
 .top-list table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 .top-list td {
-  vertical-align: top;
+  vertical-align: middle;
+  padding: 10px 0;
+}
+
+.profile-link li p:hover {
+  font-weight: bold;
 }
 
 .thumbnail-cell {
-  width: 50px;
-  height: 50px;
+  width: 120px; 
+  height: 120px; 
 }
 
 .thumbnail-cell img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.profile-image {
-  border-radius: 50%;
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
 }
 
 .profile-image-container {
-  overflow: hidden; /* This ensures the image doesn't overflow the circle */
-  width: 150px; /* Adjust this to the width/height of your image */
-  height: 150px; /* Adjust this to the width/height of your image */
-}
-
-.thumbnail-cell {
-  width: 100px; /* Set the width of the cell */
-  height: 100px; /* Set the height of the cell */
-}
-
-.thumbnail-cell img {
-  max-width: 100%; /* Ensure the image doesn't exceed the width of the cell */
-  max-height: 100%; /* Ensure the image doesn't exceed the height of the cell */
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-  margin-left: 10%;
-  margin-top: 45px;
+  height: calc(100vh - 200px); 
+  overflow-y: auto; 
+}
+
+.header-text {
+  font-size: 48px; 
+  font-weight: bold; 
+  text-align: center; 
+  margin-top: 20px; 
+  padding-left: 900px;
+  text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .side-nav {
@@ -223,11 +230,10 @@ input[type=email]:focus {
   position: absolute;
   top: 0;
   right: 0;
-  width: 3px; /* adjust the width as needed */
+  width: 3px; 
   height: 100%;
   background-color: rgba(0, 0, 0, 0.0);
 }
-
 
 
 ul {
@@ -290,7 +296,6 @@ ul li p {
 
 .charts-container {
   display: flex;
-  /*flex-wrap: wrap; Allow content to wrap to the next line */
   justify-content:center;
   margin-top: 45px;
   margin-left: 150px;
@@ -304,7 +309,7 @@ ul li p {
   
 }
 
-/* SONG BILLBOARD DO NOT FUCKING TOUCH */
+/* SONG BILLBOARD */
 .artist-billboard {
   width: 80%;
   margin: 0 auto;
@@ -328,4 +333,39 @@ ul li p {
 
 .artist p {
   margin-bottom: 0;
+}
+
+
+/*FOOTER */
+.footer {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #fff; 
+  border-bottom: 1px solid #ccc; 
+}
+
+.navbar-brand {
+  margin-right: 2rem; 
+}
+
+.navbar-nav {
+  margin-left: auto;
 }

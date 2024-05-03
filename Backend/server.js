@@ -333,9 +333,7 @@ app.post('/api/upload-json', upload.single('jsonFile'), async (req, res) => {
        // Save parsed data into MongoDB
        await musicinfo.insertMany(parsedData);
 
-
-       // Respond with success message
-       res.status(201).send('JSON file uploaded and data saved to MongoDB.');
+       res.redirect('/');
    } catch (error) {
        console.error('Error uploading JSON file and saving data to MongoDB:', error);
        res.status(500).send('Internal Server Error');
