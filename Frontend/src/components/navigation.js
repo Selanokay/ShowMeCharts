@@ -39,11 +39,11 @@ export default function Navigation() {
               </Link>
 
               <Link to="/songBillboard" className="profile-link">
-                <li><img src={schoolsImage} alt="Schools"/><p>Top 100 Songs</p></li>
+                <li><img src={schoolsImage} alt="songBillboard"/><p>Top 100 Songs</p></li>
               </Link>
 
-              <Link to="/" className="profile-link">
-                <li><img src={clubsImage} alt="Clubs"/><p>Clubs</p></li>
+              <Link to="/artistBillboard" className="profile-link">
+                <li><img src={clubsImage} alt="artistBillboard"/><p>Top 100 Artists</p></li>
               </Link>
               
           </ul>

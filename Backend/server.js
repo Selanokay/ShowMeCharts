@@ -333,7 +333,7 @@ app.post('/api/upload-json', upload.single('jsonFile'), async (req, res) => {
        // Save parsed data into MongoDB
        await musicinfo.insertMany(parsedData);
 
-       res.redirect('/');
+       res.json({ redirectUrl: '/' });
    } catch (error) {
        console.error('Error uploading JSON file and saving data to MongoDB:', error);
        res.status(500).send('Internal Server Error');
@@ -531,69 +531,6 @@ app.get('/api/top-artists-list', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-
-
-
-// Function to generate and send top songs chart by ms played
-app.get('/api/top-songs-ms-chart', async (req, res) => {
-    const trackName = req.query.track; // Get track name from query parameter
-
-    try {
-        // Get all music info from MongoDB for the specified track
-        const songMusicInfo = await musicinfo.find({ trackName: trackName });
-
-        // Convert msPlayed to numbers before sorting
-        songMusicInfo.forEach(entry => {
-            entry.msPlayed = Number(entry.msPlayed);
-        });
-
-        // Sort the music info by milliseconds played
-        songMusicInfo.sort((a, b) => b.msPlayed - a.msPlayed);
-
-        // Limit to top 10 songs
-        const topSongs = songMusicInfo.slice(0, 10);
-
-        // Extract song names
-        const topSongsData = topSongs.map(entry => entry.trackName);
-
-        // Generate bar chart image
-        const chartImage = await createSongsBarChart(topSongsData);
-
-        // Send the image as response
-        res.writeHead(200, {
-            'Content-Type': 'image/png',
-            'Content-Length': chartImage.length
-        });
-        res.end(chartImage);
-    } catch (error) {
-        console.error('Error generating top songs chart:', error);
-        res.status(500).send('Internal Server Error');
-    }
-});
-
-
-
-app.get('/api/search-artist/:artistName', async (req, res) => {
-    try {
-        const artistName = req.params.artistName;
-
-        // Find all music info where artistName matches the provided artistName
-        const artistSongs = await musicinfo.find({ artistName: { $regex: new RegExp(artistName, "i") } });
-
-        if (artistSongs.length === 0) {
-            res.status(404).json({ message: 'No songs found for the artist.' });
-            return;
-        }
-
-        // Respond with the found songs by the artist
-        res.status(200).json(artistSongs);
-    } catch (error) {
-        console.error('Error searching for artist:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
-
 
 
 const port = normalizePort(process.env.PORT || "4000");

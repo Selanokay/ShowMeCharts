@@ -31,15 +31,6 @@ const SongBillboard = () => {
         };
     }, []);
 
-    /*seEffect(() => {
-        // Apply the background only to the current page
-        document.body.style.background = 'linear-gradient(lightgreen, lightgray, gray)';
-        
-        // Cleanup function to remove the background when the component unmounts
-        return () => {
-            document.body.style.background = '';
-        };
-    }, []);*/
 
     if (loading) {
         return <div>Loading...</div>;
@@ -51,7 +42,7 @@ const SongBillboard = () => {
 
     return (
         <div style={{ backgroundColor: 'black', padding: '20px', display: 'flex', justifyContent: 'center', width: 'fit-content', margin: 'auto' }}>
-            <div style={{ position: 'relative', zIndex: 1, backgroundColor: 'lightgreen', borderRadius: '15px', padding: '20px', color: 'black' }}>
+            <div style={{ position: 'relative', zIndex: 0, backgroundColor: 'lightgreen', borderRadius: '15px', padding: '20px', color: 'black' }}>
                 <center>
                     <h2>Top 100 Songs</h2>
                 </center>
